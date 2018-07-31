@@ -1,0 +1,32 @@
+1)Difference between list and set?
+2)How set works
+3)Internal working of hashmap
+4)Types of exceptions?
+5)User-defined exceptions
+6)
+String display()
+{
+	try
+	{ System.out.println("try");}
+	catch(Exception e)
+	{ System.out.println("catch");}
+	finally
+	{ System.out.println("finally");}
+}
+what will this code return (Ans: try and finally)
+7)
+String display()
+{
+	try
+	{ return "try";}
+	catch(Exception e)
+	{ return "catch";}
+	finally
+	{ return "finally";}
+}
+what will this code return (Ans: finally)
+8)what happens in hashcode() and equals()?
+9)sql query using aggregate functions
+10)What is indexing and how is it useful?
+
+
