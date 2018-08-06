@@ -1,0 +1,25 @@
+1) Why is String immutable in Java? (Security, String pool implementation)
+ans)
+reason 1:
+->The string is Immutable in Java because String objects are cached in String pool.
+->Since cached String literals are shared between multiple clients there is always a risk, where one client's action would affect all another client (heap memory stores literals)
+reason 2:
+->String has been widely used as parameter for many Java classes e.g. for opening network connection, you can pass hostname and port number as string, you can pass database URL as a string for opening database connection, you can open any file in Java by passing the name of the file as argument to File I/O classes.
+	In case, if String is not immutable, this would lead serious security threat, I mean someone can access to any file for which he has authorization, and then can change the file name either deliberately or accidentally and gain access to that file.
+reason
+
+2) Can abstract class have a constructor in Java? (Yes)
+ans)
+->we say we can not create an instance of an abstract class then why do Java adds a constructor in the abstract class. 
+->One of the reasons which make sense is  when any class extends an abstract class, the constructor of sub class will invoke the constructor of super class either implicitly or explicitly. 
+->This chaining of constructors is one of the reasons abstract class can have constructors in Java.
+
+3)Which two methods are overridden by an Object, intended to be used as a key in HashMap?
+ans)
+
+
+
+
+
+
+

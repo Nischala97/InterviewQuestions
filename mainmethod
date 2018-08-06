@@ -1,0 +1,57 @@
+1)Can we overload main method?
+ans)
+yes,we can have any number of main methods.But to run the java class, class should have main() method with signature as “public static void main(String[] args)”.
+
+2)Can we declare main() method as private or protected or with no access modifier?
+ans)
+No,main method shd be public.It is public so that JVM will be able to access it.If it is any other program will compile but we will get run-time error that no main method exists.
+
+3)Can We Declare main() Method As Non-Static?
+ans)
+No, main() method must be declared as static so that JVM can call main() method without instantiating it’s class. If you remove ‘static’ program will compile but fails at run time.
+
+4)Can we change return type of main() method?
+ans)
+No, the return type of main() method must be void only. Any other type is not acceptable.
+
+5)Can we run java class without main() method?
+ans)
+Before java 7 we can run class using only static methods,now it is not possible.
+
+constructor:
+1) Can you create an object without using new operator in Java?
+ans)
+Yes,we can create new objects.
+	1.newInstance()
+       	 Class c = Class.forName("packageName.MyClass"); 
+	 MyClass object = (MyClass) c.newInstance();
+	2.clone() method
+	 MyClass object1 = new MyClass();
+	 MyClass object2 = object1.clone();
+
+2)What is constructor chaining?
+ans)
+It is a technique of calling another constructor from one constructor. this() is used to call same class constructor where as super() is used to call super class constructor.
+
+3)Can we call sub class constructor from super class constructor?
+ans)
+No. There is no way in java to call sub class constructor from a super class constructor.
+
+4)What happens if you keep return type for a constructor?
+ans)
+It will be treated as a normal method. But compiler gives a warning saying that method has a constructor name.
+
+5)default constructor is also called no-arg constructor.
+
+6)What is the use of private constructor?
+ans)
+yes,we can use private constructor.This prevents other classes to create an instance of this class.
+Objects to the class which has only private constructors can be created within the class.
+
+
+
+
+
+
+
+
