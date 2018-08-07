@@ -1,0 +1,15 @@
+1)what is inheritance?
+ans)
+One class inheriting properties of another class.
+
+2) You know that all classes in java are inherited from java.lang.Object class. Are interfaces also inherited from Object class.?
+ans)
+No, only classes in java are inherited from Object class. Interfaces in java are not inherited from Object class. But, classes which implement interfaces are inherited from Object class.
+
+3) How do you restrict a member of a class from inheriting to it’s sub classes.?
+ans)
+By declaring that member as a private. Because, private members are not inherited to sub classes.
+
+4) Are static members inherited to sub classes?
+ans)
+Yes, Static members are also inherited to sub classes.
