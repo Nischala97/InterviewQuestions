@@ -1,0 +1,84 @@
+->control visibility of field,class,method,constructor
+Private:
+->Cannot create subclass to class(super class) which have only private access modifier.(throws compile time error)
+->private method or innerclass or field of class cannot be inherited to another class.
+Default:
+->Class with default (no) access modifiers can not have subclass outside the package.
+Protected:
+->we can’t instantiate a class outside the package which has only protected constructors.(Here only trying instantiate causes error ,we can still use super() in sub class in another package)
+->protected members of a class are inherited to sub classes outside the package.
+
+IMP: You can’t reduce the visibility of a method while overriding it.
+
+refer to access image
+
+Interview questions:
+
+1)Types of modifiers?
+ans)
+a)Access Modifiers b)Non-access modifiers
+
+2)Types of Non-access modifiers?
+ans) 
+These are used to achieve other functionalities.
+a) static : This modifier is used to specify whether a member is a class member or an instance member.
+
+b) final : It is used to restrict the further modification of a class or a method or a field. 
+
+c) abstract : abstract class or abstract method must be enhanced or modified further. 
+
+d) synchronized : It is used to achieve thread safeness. Only one thread can execute a method or a block which is declared as synchronized at any given time. 
+
+3)Can a method or a class be final and abstract at the same time.?
+ans)
+No, it is not possible.They are totally opposite in nature. final class or final method must not be modified further where as abstract class or abstract method must be modified further.
+
+4)Can we declare an abstract method as private also.?
+ans)
+No, abstract methods can not be private. They must be public or protected or default so that they can be modified further.
+
+5)Can we declare a class as private.?
+ans)
+We can’t declare an outer class as private. But, we can declare an inner class (class as a member of another class) as private.
+
+6)Access modifiers in increasing order of their visibility:
+ans)
+private —> default or no access modifiers —> protected —> public
+
+7)Output of following?
+package pack1;
+ 
+public class A
+{
+    private int methodOne(int i)
+    {
+        return ++i;
+    }
+     
+    public int methodTwo(int i)
+    {
+        return methodOne(++i);
+    }
+}
+ 
+package pack2;
+ 
+import pack1.A;
+ 
+class B extends A
+{
+    int methodOne(int i)
+    {
+        return methodTwo(++i);
+    }
+}
+ 
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        System.out.println(new B().methodOne(101));
+    }
+}
+output:104
+
