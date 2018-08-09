@@ -1,0 +1,11 @@
+->define ideas in one class and implemented by sub-class as per requirements
+-> abstraction is implemented by abstract classes and interfaces.
+-> interfaces giv 100% abstraction.
+->can’t create objects to abstract classes. But can create objects to sub classes of abstract class.
+->Any class extending an abstract class must implement all abstract methods. If it does not implement, it must be declared as abstract.
+->Constructors and fields can not be declared as abstract.
+->Abstract methods can not be static.
+
+Interface:
+->any data members declared in interface are static final. We cannot change them in class that implements interface(compile time error)
+-> static or instance blocks are not allowed
