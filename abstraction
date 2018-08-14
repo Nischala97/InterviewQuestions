@@ -5,7 +5,50 @@
 ->Any class extending an abstract class must implement all abstract methods. If it does not implement, it must be declared as abstract.
 ->Constructors and fields can not be declared as abstract.
 ->Abstract methods can not be static.
+->abstract methods can not be declared as synchronized. But methods which override abstract methods can be declared as synchronized.
 
 Interface:
 ->any data members declared in interface are static final. We cannot change them in class that implements interface(compile time error)
--> static or instance blocks are not allowed
+-> static or instance blocks are not allowed.
+->Interface doesnt extend Object class.
+->If it doesnt extend then how do we use equals(),hashcode() or toString() methods?
+ans)It is cuz,for every public method in Object class we have an implicit abstract and public method declared in every interface
+-> Interface cannot extend any class .
+-> Interfaces only have public
+
+Example:
+Refer MainClass 
+1)How do you access interface field ‘i’ in the below code?	
+class P
+{
+    interface Q
+    {
+        int i = 111;
+    }
+}
+Ans) P.Q.i
+
+2)Is the below program written correctly? If yes, what will be the output?
+class A implements B
+{    
+    public int methodB(int i)
+    {
+        return i =+ i * i;
+    }
+}
+ 
+interface B
+{
+    int methodB(int i);
+}
+ 
+public class MainClass1
+{
+    public static void main(String[] args)
+    {
+        B b = new A();
+         
+        System.out.println(b.methodB(2));
+    }
+}
+output: 4

@@ -1,0 +1,69 @@
+->If a method is throwing an exception that it could not handle, then it should specify that exception using throws keyword.
+1.Multiple exceptions can be thrown with single throws by using commas
+2.By use of throws keyword an exception can be propagated through method calls.
+3.Every constructore can use throws keyword.For this, object creation code must included only in try catch block.
+4.We need not use throws for unchecked exception but we should definitely use throws for checked exception.
+
+Method overriding with throws clause:
+			   	   (Sub Class)
+-----------------------------------------------------------------------------------------
+    Super class         -      checked   -  unchecked    -  Exception   - compile error 
+-----------------------------------------------------------------------------------------
+1)  no Exception        -        yes     -               -       yes    -    yes
+-----------------------------------------------------------------------------------------
+2)  no Exception        -                -     yes       -      	-    no
+-----------------------------------------------------------------------------------------
+3)  unchecked ecxeption -        yes     -               -      	-    yes
+-----------------------------------------------------------------------------------------
+4)  unchecked ecxeption -                - yes(same or          	-    no
+                                               different)-      	      
+-----------------------------------------------------------------------------------------
+5) checked ecxeption    -        yes     -     yes       -      	-    no
+-----------------------------------------------------------------------------------------
+6) checked ecxeption    -                -               -     yes 	-    yes
+-----------------------------------------------------------------------------------------
+
+
+USER DEFINED EXCEPTION: https://javaconceptoftheday.com/user-defined-exceptions-java/
+
+-------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+diff b/w throw,throws, Throwable?
+->throw, is used to throw an exception manually.We can throw exception from any method or block.
+->throws is used in method signature saying that method might throw mentioned exceptions.
+(return_type method_name(parameter_list) throws exception_list{ })
+->Throwable is super class of all errors and exceptions.Throwable extends java.lang.Object class.
+->argument of catch block should be its type or sub-class type.
+-> exception will be thrown either by JVM or throw.
+
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+Difference Between Error Vs Exception In Java?
+->errors occur mainly cuz of environment where application runs.Exception occur cuz of application itself
+-> cant recover from error, but can recover from exception(using try-catch blocks).
+-> error=>java.lang.Error , exception=> java.lang.Exception
+-> error=>All errors are unchecked. exception=> checked and unchecked.
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+Difference Between ClassNotFoundException Vs NoClassDefFoundError In Java?
+-> ClassNotFoundException=>Compile-time , NoClassDefFoundError=>run-time error
+->first one=> when we try to load a class using (ex:Class.forName("")) and it is not found.
+  second one=> if the program compiles without prblm and if any class file ( .class of file other than public class) is not found.
+
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+points:
+1.try should be followed by either catch or finally or maybe both.
+2.What is re-throwing an exception?
+ans.exception raised in try is handled in catch.If it is unable to handle, it can re-throw that exception using throw key-word.
+3. Possible case of StackOverflowError
+ans.When 2 methods call each other recursively.
+ void m1() { m2(); }
+ void m2() { m1(); }
+ 
+
+
+

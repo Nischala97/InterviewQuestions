@@ -1,0 +1,92 @@
+-> Nested classes and constructors can be overloaded
+->For every primitive data type there exists a Wrapper Class.They have java.lang.package
+->valuOf() method is of three forms.It is present in every Wrapper class.
+	1.valueOf(primitive)=> returns corresponding wrapper class object
+	2.valueOf(String)=> returns corresponding wrapper class object throws numberformat Exception if not given valid numeric value. It doesnt support Character conversion.
+	3.valueOf(String,int)=> Takes the string as input as base/radix as given int argument. 
+	Ex: 
+	1.        
+	Byte B = Byte.valueOf((byte) 123);
+        System.out.println(B);              //Output : 123
+ 
+        Short S = Short.valueOf((short) 25);
+        System.out.println(S);             //Output : 25
+ 
+        Integer I = Integer.valueOf(46);
+        System.out.println(I);            //Output : 46
+ 
+        Long L = Long.valueOf(235);
+        System.out.println(L);            //Output : 235
+ 
+        Float F = Float.valueOf(23.5f);
+        System.out.println(F);           //Output : 23.5
+ 
+        Double D = Double.valueOf(15.4d);
+        System.out.println(D);           //Output : 15.4
+ 
+        Boolean BLN = Boolean.valueOf(true);
+        System.out.println(BLN);        //Output : true
+ 
+        BLN = Boolean.valueOf(false);
+        System.out.println(BLN);        //Output : false
+ 
+        Character C = Character.valueOf('C');
+        System.out.println(C);   
+	
+	2.
+        Byte B = Byte.valueOf("123");
+        System.out.println(B);              //Output : 123
+ 
+        Short S = Short.valueOf("25");
+        System.out.println(S);             //Output : 25
+ 
+        Integer I = Integer.valueOf("46");
+        System.out.println(I);            //Output : 46
+ 
+        Long L = Long.valueOf("235");
+        System.out.println(L);            //Output : 235
+ 
+        Float F = Float.valueOf("23.5");
+        System.out.println(F);           //Output : 23.5
+ 
+        Double D = Double.valueOf("15.4");
+        System.out.println(D);           //Output : 15.4
+ 
+        Boolean BLN = Boolean.valueOf("true");
+        System.out.println(BLN);        //Output : true
+ 
+        BLN = Boolean.valueOf("false");
+        System.out.println(BLN);        //Output : false
+ 
+        BLN = Boolean.valueOf("abc");
+        System.out.println(BLN);       //Output : false
+ 
+        //Character C = Character.valueOf("C");    //Compile Time Error : Character Class doesn't have this method
+
+	3.
+        Byte B = Byte.valueOf("10110", 2);  //A number with base 2 is converted into decimal value
+        System.out.println(B);              //Output : 22
+ 
+        B = Byte.valueOf("43", 5);         //A number with base 5 is converted into decimal value
+        System.out.println(B);             //Output : 23
+ 
+        Short S = Short.valueOf("12043", 8);     //A number with base 8 is converted into decimal value
+        System.out.println(S);                  //Output : 5155
+ 
+        S = Short.valueOf("4751", 10);      //A number with base 10 is converted into decimal value
+        System.out.println(S);              //Output : 4751
+ 
+        Integer I = Integer.valueOf("4673AB", 12);    //A number with base 12 is converted into decimal value
+        System.out.println(I);            //Output : 1132403
+ 
+        I = Integer.valueOf("6489CDF", 16);     //A number with base 16 is converted into decimal value
+        System.out.println(I);                  //Output : 105422047
+ 
+        Long L = Long.valueOf("GHFTDJ", 36);    //A number with base 36 is converted into decimal value
+        System.out.println(L);                 //Output : 996750199
+ 
+        L = Long.valueOf("DFGCHJ", 36);      //A number with base 36 is converted into decimal value
+        System.out.println(L);               //Output : 812017207
+
+
+
