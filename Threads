@@ -1,0 +1,3 @@
+->You can change the name of a thread at any state of the thread.like after you say thread.start() or thread.sleep(2000).
+->default name of thread will be Thread-0.
+->setName() and getName() can be used.
