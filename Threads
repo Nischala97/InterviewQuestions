@@ -7,3 +7,89 @@
 
 ->bad practice to call sleep() method with an instance of Thread class. If you want a particular thread to sleep for a while, then call sleep() method inside the run() method of that thread.
 -> In sleep method,if miilis value is negative or nanos value is not in the range 0 – 999999 method may also throws IllegalArgumentException
+
+->Every thread writes into its own memory.If there are multi-threads there is a problem,every thread reads or writes into the same memory.This is called thread interference.
+How to avoid this:
+------------------
+    By declaring the method as synchronized.
+    By declaring the variables as final.
+    By declaring the variable as volatile.
+    By creating the immutable objects.
+    By using Atomic operations.
+    By restricting the access to same object by multiple threads.
+
+-------------------------------------------------------------------------------------------------------------------  ->synchronized keyword is only used with methods . not variables or constructors
+nested synchronization may result in deadlock.
+synchronized (Lock A)
+{
+    //Some statements
+ 
+    synchronized (Lock B)
+    {
+        //Try to avoid this block
+    }
+}
+To avoid that we can have lock ordering:
+Thread t1 :
+        Lock A
+        Lock B
+Thread t2 :
+        Lock A
+        Lock C
+Thread t3 :
+        Lock A
+        Lock B
+        Lock C
+Put a condition that => Lock A must be acquired before Lock B and Lock B must be acquired before Lock c, then deadlock never occurs in the above case.
+----------------------------------------------------------------------------------------------------------
+important points to remember:
+1)If you start a thread that is already started, you will get java.lang.IllegalThreadStateException at run time. There will be no compilation errors.
+
+2)Exception is thread-wise not execution-wise.Whenever a thread throws an exception, only this thread will end others will be executed normally.
+
+3)What happens when you call run() method directly?
+ans)Whenever we call run() method directly,calling thread will execute the task defined in the run() method.
+Here main thread is calling run() method of thread t. In this case, main thread will execute run() method not thread t.	
+public class ThreadsInJava
+{
+    public static void main(String[] args)
+    {
+        Thread t = new Thread()
+        {
+            public void run()
+            {
+                System.out.println(Thread.currentThread().getName());    //Output : main
+            }
+        }; 
+        t.run();
+    }
+}
+
+4)when multiple threads need to execute same task, then use Runnable interface. If multiple threads need to execute different tasks, then go for Thread class.
+
+5)Difference b/w wait() and sleep()?
+ans) 
+a) Whenever a thread calls wait() method, it releases the lock or monitor it holds and whenever a thread calls sleep() method, it doesn’t release the lock or monitor it holds
+b) after wait(),thread goes to WAITING state. After sleep(),thread goes to TIMED_WAITING state.
+
+6)wait() is instance method of java.lang.Object class, means this is avil with all the objects created/
+ sleep() is static method of java.lang.Thread, means only threads can access it.
+
+7)A process can have many threads.Each thread have its own task and its own path of execution in a process.
+
+8)Whenever we are using Runnable interface, we seperate the task from the runner.Here runnable interface represents the task.In this case we see loose coupling.
+ 	However extending Thread Class is tightly coupled, cuz single class will have task and runner.
+
+9)What are the ways to stop a thread?
+ans)using flag or interrupt() method. 
+flag method: 
+When we override run(), we add a condition where flag must be true to run the thread. We can write another method in class which can be used to stop thread where we can change flag to false.
+interrupt() method:
+when we override run(), we write a while condition=>while(!Thread.interrupted()).Later in the class we use, threadName.interrupt() 
+
+10)
+
+
+
+ 
+
