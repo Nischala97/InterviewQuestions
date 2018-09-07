@@ -7,6 +7,7 @@ Default:
 Protected:
 ->we can’t instantiate a class outside the package which has only protected constructors.(Here only trying instantiate causes error ,we can still use super() in sub class in another package)
 ->protected members of a class are inherited to sub classes outside the package.
+->
 
 IMP: You can’t reduce the visibility of a method while overriding it.
 

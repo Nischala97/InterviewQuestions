@@ -1,0 +1,5 @@
+1)We cannot call sub class constructor from superclass.
+2)If we have return type for constructor it becomes normal method.Compiler gives a warning saying, method have constructor name.
+3)Default constructor is also called no-arg constructor.
+4)this() and super() are used only in constructors not methods.
+5)private constructors are used to make class instantiable
